@@ -14,11 +14,7 @@ class Connection
 
   private function __construct()
   {
-    try {
-	  $this->connection = new PDO('mysql:host='.$this->dbhost.';dbname='.$this->dbname, $this->dbuser, $this->dbpass);
-	} catch ( PDOException $e ){
-	  print $e->getMessage();
-	}
+    $this->connection = new PDO('mysql:host='.$this->dbhost.';dbname='.$this->dbname, $this->dbuser, $this->dbpass);
   }
 
   public static function getInstance()
